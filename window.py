@@ -1,84 +1,92 @@
 from tkinter import *
-import tkinter as tk
-from tkinter import messagebox
-from PIL import Image,ImageTk
-from tkinter.ttk import Combobox
-
-from tkinter import ttk
-
-    
 
 
+top = Tk()
 
 
-global screen
-screen=Tk()
-w=screen.winfo_screenwidth()
-h=screen.winfo_screenheight()
-screen.geometry("%dx%d" %(w,h))
-        
-screen.title("Tally")
-# p1 = PhotoImage(file='D:\\Tally\\front.jpg')
-# screen.iconphoto(True, p1)
-screen.configure(background="#3a646b")
-screen.configure(cursor="arrow")
+w = top.winfo_screenwidth()
+h = top.winfo_screenheight()
+top.geometry("%dx%d" % (w, h))
 
-def new_page():
-    global Canvas2
-    Canvas2 = tk.Canvas( background="#ffffff", relief="ridge")
-    Canvas2.place(relx=0.550, rely=0.4, relheight=0.250, relwidth=.150)
-    Label6 = Label(screen,text='Statements Of Accounts', background="#3385ff",
-                                     foreground="#00254a",
-                                     font="-family {Segoe UI} -size 10 -weight bold ").place(relx=0.550, rely=0.400,relwidth=.150)
-    b10 = Button(screen,text = "Receivables",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.450,relwidth=.148)
-    b11 = Button(screen,text = "Payables",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10'),command=new_page).place(relx=0.551, rely=0.480,relwidth=.148)
-    b12 = Button(screen,text = "Ledger",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.520,relwidth=.148)
-    b12 = Button(screen,text = "Group",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.540,relwidth=.148)
-    b12 = Button(screen,text = "Quit",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.590,relwidth=.148)
-
-          
-name = Label(screen, text="TallyPrime", fg='pink',bg='#3a646b',font=("Arial", 13),anchor='w').place(x = 1,y = 0)
-name = Label(screen, text="Gate WayOf Tally", fg='black',bg='#00c8ff',font=('Arial 7 bold'),anchor='w').place(x = 1,y = 60)
-name = Label(screen, text="MANAGE" ,fg='#00c8ff',bg='#3a646b',font=('Arial 9 underline'),anchor='w').place(x = 110,y = 9)
+#function on trial balance
 
 
-b1 = Button(screen,text = "K:Company",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=120,y=33)
-b2 = Button(screen,text = "Y:Data",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=275,y=33)
-b3 = Button(screen,text = "Z:Exchange",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=395,y=33)
-b4 = Button(screen,text = "  G:Go To  ",activeforeground = "black", activebackground = "white",fg='black',bg='white',borderwidth=0,underline=2,font=('Arial 10 bold'),).place (x=565,y=33)
-b5 = Button(screen,text = "O:Import",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=825,y=33)
-b6 = Button(screen,text = "E:Export",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=925,y=33)
-b7 = Button(screen,text = "M:E-mail",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=1025,y=33)
-b8 = Button(screen,text = "P:Print",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=1127,y=33)
-b9 = Button(screen,text = "F1:Help",activeforeground = "black", activebackground = "white",fg='white',bg='#3a646b',borderwidth=0,underline=0,font=('Arial 10')).place (x=1227,y=33)
 
-global Canvas1
-Canvas1 = tk.Canvas( background="#ffffff", relief="ridge")
-Canvas1.place(relx=0, rely=0.07, relheight=0.900, relwidth=.850)
-Label5 = Label(Canvas1,text='Select Company',borderwidth="0", width=5, background="#3385ff",
-                                     foreground="#00254a",
-                                     font="-family {Segoe UI} -size 10 -weight bold ")
-Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.999)
+def trialbalance():
+    trialbalanc = Label(top, text="Trial Balance", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
+
+    trialbalanceform = Label(top, text="", fg='#00c8ff', bg='green', font=(
+    'Arial 9 underline'), anchor='w').place(x=1, y=73, width=1219, height=604)
 
 
 
 
-global canvas4
-Canvas4 = tk.Canvas( background="#ffffff", relief="ridge")
-Canvas4.place(relx=0.550, rely=0.4, relheight=0.350, relwidth=.150)
-
-Label6 = Label(screen,text='Inventory Books', background="#3385ff",
-                                     foreground="#00254a",
-                                     font="-family {Segoe UI} -size 10 -weight bold ").place(relx=0.550, rely=0.400,relwidth=.150)
+def trialbalance():
+    trialbalanc = Label(top, text="Trial Balance", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
+    trialbalanceform = Label(top, text="", fg='#00c8ff', bg='green', font=(
+    'Arial 9 underline'), anchor='w').place(x=1, y=73, width=1219, height=604)
 
 
-b10 = Button(screen,text = "Stock Item",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.450,relwidth=.148)
-b11 = Button(screen,text = "Godowns",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.480,relwidth=.148)
-b12 = Button(screen,text = "Stock Group Summary",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.520,relwidth=.148)
-b13 = Button(screen,text = "Stock Catagory Summary",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.560,relwidth=.148)
-b14 = Button(screen,text = "Stock Transfer Journal Register",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.600,relwidth=.148)
-b15 = Button(screen,text = "Physical Stock Register",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.640,relwidth=.148)
-b16 = Button(screen,text = "Quit",activeforeground = "black", activebackground = "#ffbe23",fg='#3385ff',bg='#ffffff',borderwidth=0,font=('Arial 10')).place(relx=0.551, rely=0.680,relwidth=.148)
-global Canvas3
-Canvas3 = tk.Canvas(background="#d9effc", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
-Canvas3.place(relx=0.850, rely=0.07, relheight=0.9, relwidth=0.150)
+
+
+
+
+
+# NavBar Start
+name = Label(top, text="TallyPrime", fg='pink', bg='#3a646b', font=(
+    "Arial", 13), anchor='w').place(x=0, y=0, width=1600, height=60)
+name = Label(top, text="Gate WayOf Tally", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=0, y=60, width=1600, height=13)
+name = Label(top, text="MANAGE", fg='#00c8ff', bg='#3a646b', font=(
+    'Arial 9 underline'), anchor='w').place(x=110, y=9, width=206, height=10)
+
+b1 = Button(top, text="K:Company", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=120, y=33)
+b2 = Button(top, text="Y:Data", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=275, y=33)
+b3 = Button(top, text="Z:Exchange", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=395, y=33)
+b4 = Button(top, text="  G:Go To  ", activeforeground="black", activebackground="white",
+            fg='black', bg='white', borderwidth=0, underline=2, font=('Arial 10 bold'),).place(x=565, y=33)
+b5 = Button(top, text="O:Import", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=825, y=33)
+b6 = Button(top, text="E:Export", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=925, y=33)
+b7 = Button(top, text="M:E-mail", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=1025, y=33)
+b8 = Button(top, text="P:Print", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=1127, y=33)
+b9 = Button(top, text="F1:Help", activeforeground="black", activebackground="white",
+            fg='white', bg='#3a646b', borderwidth=0, underline=0, font=('Arial 10')).place(x=1227, y=33)
+
+# NavBar End
+
+
+
+name = Label(top, fg='#00c8ff', bg='#94ecf7', borderwidth=2, font=(
+    'Arial 9 underline'), anchor='w').place(x=1300, y=60, width=315, height=900)
+
+menu = Label(top, fg='#00c8ff', bg='#a9ceeb', borderwidth=2, font=(
+    'Arial 9 underline'), anchor='w').place(x=863, y=250, width=252, height=400)
+
+menuname = Label(top,text="Inventory Books", fg='white', bg='#0851a8', borderwidth=2, font=(
+    'Arial 9 '), anchor='center').place(x=863, y=250, width=252, height=19)
+
+menuname = Label(top,text="SUMMARY", fg='#558de0', bg='#a9ceeb', borderwidth=2, font=(
+    'Arial 7 '), anchor='center').place(x=868, y=288, width=70, height=19)
+
+menuname = Label(top,text="REGISTERS", fg='#558de0', bg='#a9ceeb', borderwidth=2, font=(
+    'Arial 7 '), anchor='center').place(x=868, y=470, width=70, height=19)
+
+
+
+b10 = Button(top,text = "Stock Item",command=trialbalance,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.390,relwidth=.148)
+b11 = Button(top,text = "Godowns",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.430,relwidth=.148)
+b12 = Button(top,text = "Stock Group Summary",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.470,relwidth=.148)
+b13 = Button(top,text = "Stock Catagory Summary",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.510,relwidth=.148)
+b14 = Button(top,text = "Stock Transfer Journal Register",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.600,relwidth=.148)
+b15 = Button(top,text = "Physical Stock Register",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.640,relwidth=.148)
+b16 = Button(top,text = "Quit",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.680,relwidth=.148)
+top.mainloop()
