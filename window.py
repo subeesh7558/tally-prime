@@ -1,11 +1,16 @@
 from cProfile import label
+from dataclasses import field
 from textwrap import fill
 from tkinter import *
 from tkinter import ttk
 
+from colorama import Style
 
+ebg='#ffeb7d'
+fg='black'
 top = Tk()
-
+style=ttk.Style()
+style.theme_use('alt')
 
 w = top.winfo_screenwidth()
 h = top.winfo_screenheight()
@@ -86,6 +91,24 @@ def trialbalance():
     
 
 
+def listofgroup():
+    
+
+    
+
+    name = Label(top, fg='#00c8ff', bg='#94ecf7', borderwidth=2, font=(
+    'Arial 9 underline'), anchor='w').place(x=1300, y=60, width=315, height=900)
+
+    menu = Label(top, fg='#00c8ff', bg='#a9ceeb', borderwidth=2, font=(
+        'Arial 9 underline'), anchor='w').place(x=310, y=380, width=300, height=400)
+
+    menuname = Label(top,text="List Of Groups", fg='white', bg='#0851a8', borderwidth=2, font=(
+        'Arial 9 '), anchor='center').place(x=310, y=380, width=300, height=19)
+
+
+
+    b9 = Button(top,text = "Create",command=create,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(x=480, y=415, width=130,anchor="nw")
+   
 def create():
     trialbalanc = Label(top, text="Create", fg='black', bg='#00c8ff', font=(
     'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
@@ -105,10 +128,57 @@ def create():
     e1 = Entry(top,fg='black',bg='#ffeb7d').place(x = 80, y = 100,width=300,height=30)
     e2 = Entry(top,fg='black',bg='white').place(x = 80, y = 140,width=300,height=30)  
 
+    separator = ttk.Separator(top, orient='horizontal')
+    separator.place(relx=0, rely=0.31, relheight=0, relwidth=0.845)
+
+    separator = ttk.Separator(top, orient='vertical')
+    separator.place(relx=0.40, rely=0.31, relheight=0.490, relwidth=0)
+
+
    
-  
+    name2 = Label(top, text = "Under",fg='black',bg='white').place(x = 10,y = 300,width=60,height=30)
+    name3 = Label(top, text = "Units",fg='black',bg='white').place(x = 10,y = 340,width=60,height=30)
+    b14 = Button(top,text = "Primary",command=listofgroup,activeforeground = "black", activebackground = "#ffeb7d",bg='#ffeb7d',borderwidth=0,font=('Arial 10')).place(relx=0.200, rely=0.360,relwidth=.198)
+    b15 = Button(top,text = "Not Applicable",activeforeground = "black", activebackground = "#ffeb7d",bg='#ffeb7d',borderwidth=0,font=('Arial 10')).place(relx=0.200, rely=0.400,relwidth=.198)
+    
+
+    name3 = Label(top, text = "Statuatary Details",fg='black',bg='white').place(x = 625,y = 300,width=100)
+    separator = ttk.Separator(top, orient='vertical')
+    separator.place(x = 625,y = 325,width=100)
 
 
+    name4 = Label(top, text = "GST Applicable",fg='black',bg='white').place(x = 625,y = 330,width=100)
+    top.option_add('*TCombobox*Listbox*Background', ebg)
+    top.option_add('*TCombobox*Listbox*Foreground', fg)
+    top.option_add('*TCombobox*Listbox*selectBackground', fg)
+    top.option_add('*TCombobox*Listbox*selectForeground', ebg)
+    course=['Applicable','Not Applicable','Undenied']
+    cmb=ttk.Combobox(state="readonly",value=course,width=50,height=30)
+    
+    cmb.place(x=870,y=330)
+    style.map('TCombobox', fieldbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectforeground=[('readonly', fg)])
+    style.map('TCombobox', background=[('readonly', ebg)])
+    style.map('TCombobox', foreground=[('readonly', fg)])
+
+    name5 = Label(top, text = "Types Of Supply",fg='black',bg='white').place(x = 625,y = 370,width=100)
+    top.option_add('*TCombobox*Listbox*Background', ebg)
+    top.option_add('*TCombobox*Listbox*Foreground', fg)
+    top.option_add('*TCombobox*Listbox*selectBackground', fg)
+    top.option_add('*TCombobox*Listbox*selectForeground', ebg)
+    course=['Goods','Services']
+    cmb=ttk.Combobox(state="readonly",value=course,width=50,height=30)
+    
+    cmb.place(x=870,y=370)
+    style.map('TCombobox', fieldbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectforeground=[('readonly', fg)])
+    style.map('TCombobox', background=[('readonly', ebg)])
+    style.map('TCombobox', foreground=[('readonly', fg)])
+
+    name6 = Label(top, text = "Rate Of Duty (eg 5)",fg='black',bg='white').place(x = 625,y = 410,width=120)
+    e5 = Entry(top,fg='black',bg='#ffeb7d').place(x = 870, y = 410,width=200,height=30)
 
 # NavBar Start
 name = Label(top, text="TallyPrime", fg='pink', bg='#3a646b', font=(
