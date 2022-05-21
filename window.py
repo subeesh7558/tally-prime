@@ -107,7 +107,7 @@ def listofgroup():
 
 
 
-    b9 = Button(top,text = "Create",command=create,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(x=480, y=415, width=130,anchor="nw")
+    b9 = Button(top,text = "Create",command=stockcreation,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(x=480, y=415, width=130,anchor="nw")
    
 def create():
     trialbalanc = Label(top, text="Create", fg='black', bg='#00c8ff', font=(
@@ -139,7 +139,7 @@ def create():
     name2 = Label(top, text = "Under",fg='black',bg='white').place(x = 10,y = 300,width=60,height=30)
     name3 = Label(top, text = "Units",fg='black',bg='white').place(x = 10,y = 340,width=60,height=30)
     b14 = Button(top,text = "Primary",command=listofgroup,activeforeground = "black", activebackground = "#ffeb7d",bg='#ffeb7d',borderwidth=0,font=('Arial 10')).place(relx=0.200, rely=0.360,relwidth=.198)
-    b15 = Button(top,text = "Not Applicable",activeforeground = "black", activebackground = "#ffeb7d",bg='#ffeb7d',borderwidth=0,font=('Arial 10')).place(relx=0.200, rely=0.400,relwidth=.198)
+    b15 = Button(top,text = "Not Applicable",command=applicable,activeforeground = "black", activebackground = "#ffeb7d",bg='#ffeb7d',borderwidth=0,font=('Arial 10')).place(relx=0.200, rely=0.400,relwidth=.198)
     
 
     name3 = Label(top, text = "Statuatary Details",fg='black',bg='white').place(x = 625,y = 300,width=100)
@@ -179,6 +179,93 @@ def create():
 
     name6 = Label(top, text = "Rate Of Duty (eg 5)",fg='black',bg='white').place(x = 625,y = 410,width=120)
     e5 = Entry(top,fg='black',bg='#ffeb7d').place(x = 870, y = 410,width=200,height=30)
+
+
+
+def stockcreation():
+    trialbalanc = Label(top, text="Stock Group Creation(Secondary)", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
+    trialbalanceform = Label(top, text="", fg='#00c8ff', bg='#f0e8c0', font=(
+    'Arial 9 underline'), anchor='w').place(x=1, y=73, width=1300, height=804)
+    b4 = Button(top, text="x", command=create, activeforeground="black", activebackground="#00c8ff",
+            fg='black', bg='#00c8ff', borderwidth=0, font=('Arial 10 bold'),).place(x=1280, y=60,height=12)
+
+    Label1 = Label(top,text='',borderwidth="0", width=3, background="white",
+                                     foreground="#00254a",
+                                     font="-family {Segoe UI} -size 10 -weight bold ",anchor="n",bd=2,)
+    Label1.place(x=0,y=75, height=300, width=500)
+
+    name = Label(top, text = "Name",fg='black',bg='white').place(x = 10,y = 100,width=60,height=30)
+    alias = Label(top, text = "(alias)",fg='black',bg='white').place(x = 10, y =140,width=60,height=30)  
+    under = Label(top, text = "Under",fg='black',bg='white').place(x = 10, y =200,width=60,height=30)  
+    itemsadd = Label(top, text = "Should Quantities of items added",fg='black',bg='white').place(x = 10, y =260,width=200,height=30)
+    itemgst = Label(top, text = "Set/Alter GST Details",fg='black',bg='white').place(x = 10, y =300,width=200,height=30)  
+    
+    e1 = Entry(top,fg='black',bg='#ffeb7d').place(x = 80, y = 100,width=300,height=30)
+    e2 = Entry(top,fg='black',bg='white').place(x = 80, y = 140,width=300,height=30)  
+    e3 = Entry(top,fg='black',bg='#ffeb7d').place(x = 80, y = 200,width=300,height=30)  
+    e4 = Entry(top,fg='black',bg='#ffeb7d').place(x = 300, y = 260,width=80,height=30)
+    e5 = Entry(top,fg='black',bg='#ffeb7d').place(x = 300, y = 300,width=80,height=30)  
+
+
+
+
+def applicable():
+    name = Label(top, fg='#00c8ff', bg='#94ecf7', borderwidth=2, font=(
+    'Arial 9 underline'), anchor='w').place(x=1300, y=60, width=315, height=900)
+
+    menu = Label(top, fg='#00c8ff', bg='#a9ceeb', borderwidth=2, font=(
+        'Arial 9 underline'), anchor='w').place(x=310, y=380, width=300, height=400)
+
+    menuname = Label(top,text="Units", fg='white', bg='#0851a8', borderwidth=2, font=(
+        'Arial 9 '), anchor='center').place(x=310, y=380, width=300, height=19)
+
+
+
+    b9 = Button(top,text = "Create",command=unitcreation,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(x=480, y=415, width=130,anchor="nw")
+   
+
+
+def unitcreation():
+    trialbalanc = Label(top, text="Unit Creation(Secondary)", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
+    trialbalanceform = Label(top, text="", fg='#00c8ff', bg='#f0e8c0', font=(
+    'Arial 9 underline'), anchor='w').place(x=1, y=73, width=1300, height=804)
+    b4 = Button(top, text="x", command=create, activeforeground="black", activebackground="#00c8ff",
+            fg='black', bg='#00c8ff', borderwidth=0, font=('Arial 10 bold'),).place(x=1280, y=60,height=12)
+
+    Label1 = Label(top,text='',borderwidth="0", width=3, background="white",
+                                     foreground="#00254a",
+                                     font="-family {Segoe UI} -size 10 -weight bold ",anchor="n",bd=2,)
+    Label1.place(x=0,y=75, height=300, width=500)
+
+    name4 = Label(top, text = "Type",fg='black',bg='white').place(x = 0,y = 90,width=40)
+    top.option_add('*TCombobox*Listbox*Background', ebg)
+    top.option_add('*TCombobox*Listbox*Foreground', fg)
+    top.option_add('*TCombobox*Listbox*selectBackground', fg)
+    top.option_add('*TCombobox*Listbox*selectForeground', ebg)
+    course=['Simple','Compound']
+    cmb=ttk.Combobox(state="readonly",value=course,width=30,height=30)
+    
+    cmb.place(x=170,y=90)
+    style.map('TCombobox', fieldbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectforeground=[('readonly', fg)])
+    style.map('TCombobox', background=[('readonly', ebg)])
+    style.map('TCombobox', foreground=[('readonly', fg)])
+
+
+    name = Label(top, text = "Symbol",fg='black',bg='white').place(x = 0,y = 130,width=60,height=30)
+    alias = Label(top, text = "Format Name",fg='black',bg='white').place(x = 0, y =170,width=95,height=30)  
+    under = Label(top, text = "Unit Quantity Code (UQC)",fg='black',bg='white').place(x = 0, y =210,width=165,height=30)  
+    itemsadd = Label(top, text = "Number Of Decimal Places",fg='black',bg='white').place(x = 0, y =250,width=170,height=30)
+   
+    e1 = Entry(top,fg='black',bg='#ffeb7d').place(x = 170, y = 130,width=100,height=30)
+    e2 = Entry(top,fg='black',bg='#ffeb7d').place(x = 170, y = 170,width=100,height=30)  
+    e3 = Entry(top,fg='black',bg='#ffeb7d').place(x = 170, y = 210,width=100,height=30)  
+    e4 = Entry(top,fg='black',bg='#ffeb7d').place(x = 170, y = 250,width=100,height=30)
+    
+
 
 # NavBar Start
 name = Label(top, text="TallyPrime", fg='pink', bg='#3a646b', font=(
