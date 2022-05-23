@@ -42,7 +42,7 @@ def home():
 
 
     b10 = Button(top,text = "Stock Item",command=trialbalance,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.390,relwidth=.148)
-    b11 = Button(top,text = "Godowns",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.430,relwidth=.148)
+    b11 = Button(top,text = "Godowns",command=listofgodowns,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.430,relwidth=.148)
     b12 = Button(top,text = "Stock Group Summary",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.470,relwidth=.148)
     b13 = Button(top,text = "Stock Catagory Summary",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.510,relwidth=.148)
     b14 = Button(top,text = "Stock Transfer Journal Register",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.600,relwidth=.148)
@@ -267,6 +267,82 @@ def unitcreation():
     
 
 
+
+def listofgodowns():
+    tlistofgodownrialbalanc = Label(top, text="Select Godown", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
+    trialbalanceform = Label(top, text="", fg='#00c8ff', bg='white', font=(
+    'Arial 9 underline'), anchor='w').place(x=1, y=73, width=1298, height=604)
+    b4 = Button(top, text="x", command=home, activeforeground="black", activebackground="#00c8ff",
+            fg='black', bg='#00c8ff', borderwidth=0, font=('Arial 10 bold'),).place(x=1280, y=60,height=12)
+
+    Label1 = Label(top,text='Name of Godowns',borderwidth="0", width=3, background="#faf8d7",
+                                     foreground="#00254a",
+                                     font="-family {Segoe UI} -size 10 -weight bold ",anchor="n",bd=2,)
+    Label1.place(relx=0.35, rely=0.09, relheight=0.10, relwidth=0.150)
+    Entry1 = Entry(top,width=8,borderwidth="3",bg="#f7d065")
+    Entry1.place(relx=0.36, rely=0.14, relheight=0.03, relwidth=0.132)
+
+
+    name = Label(top, fg='#00c8ff', bg='#94ecf7', borderwidth=2, font=(
+    'Arial 9 underline'), anchor='w').place(x=1300, y=60, width=315, height=900)
+
+    menu = Label(top, fg='#00c8ff', bg='#a9ceeb', borderwidth=2, font=(
+        'Arial 9 underline'), anchor='w').place(x=504, y=180, width=300, height=400)
+
+    menuname = Label(top,text="List Of Godowns", fg='white', bg='#0851a8', borderwidth=2, font=(
+        'Arial 9 '), anchor='center').place(x=504, y=160, width=300, height=19)
+
+
+
+    b9 = Button(top,text = "Create",command=godowncreation,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.450, rely=0.220,relwidth=0.070,anchor="nw")
+    b10 = Button(top,text = "Primary",command=trialbalance,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10'),anchor="w").place(relx=0.350, rely=0.250,relwidth=.148)
+   
+
+
+
+def godowncreation():
+    trialbalanc = Label(top, text="Godown Creation(Secondary)", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
+    trialbalanceform = Label(top, text="", fg='#00c8ff', bg='#f0e8c0', font=(
+    'Arial 9 underline'), anchor='w').place(x=1, y=73, width=1300, height=804)
+    b4 = Button(top, text="x", command=listofgodowns, activeforeground="black", activebackground="#00c8ff",
+            fg='black', bg='#00c8ff', borderwidth=0, font=('Arial 10 bold'),).place(x=1280, y=60,height=12)
+
+    Label1 = Label(top,text='',borderwidth="0", width=3, background="white",
+                                     foreground="#00254a",
+                                     font="-family {Segoe UI} -size 10 -weight bold ",anchor="n",bd=2,)
+    Label1.place(x=0,y=75, height=200, width=400)
+
+
+
+    name = Label(top, text = "Name",fg='black',bg='white').place(x = 0,y = 90,width=60,height=30)
+    alias = Label(top, text = "(alias)",fg='black',bg='white').place(x = 0, y =130,width=60,height=30)  
+
+    name4 = Label(top, text = "Under",fg='black',bg='white').place(x = 0,y = 170,width=60)
+    top.option_add('*TCombobox*Listbox*Background', ebg)
+    top.option_add('*TCombobox*Listbox*Foreground', fg)
+    top.option_add('*TCombobox*Listbox*selectBackground', fg)
+    top.option_add('*TCombobox*Listbox*selectForeground', ebg)
+    course=['Primary']
+    cmb=ttk.Combobox(state="readonly",value=course,width=20,height=30)
+    
+    cmb.place(x=170,y=170)
+    style.map('TCombobox', fieldbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectbackground=[('readonly', ebg)])
+    style.map('TCombobox', selectforeground=[('readonly', fg)])
+    style.map('TCombobox', background=[('readonly', ebg)])
+    style.map('TCombobox', foreground=[('readonly', fg)])
+
+
+    
+    
+    e1 = Entry(top,fg='black',bg='#ffeb7d').place(x = 170, y = 90,width=160,height=30)
+    e2 = Entry(top,fg='black',bg='#ffeb7d').place(x = 170, y = 130,width=160,height=30)  
+    
+
+
+
 # NavBar Start
 name = Label(top, text="TallyPrime", fg='pink', bg='#3a646b', font=(
     "Arial", 13), anchor='w').place(x=0, y=0, width=1600, height=60)
@@ -316,7 +392,7 @@ menuname = Label(top,text="REGISTERS", fg='#558de0', bg='#a9ceeb', borderwidth=2
 
 
 b10 = Button(top,text = "Stock Item",command=trialbalance,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.390,relwidth=.148)
-b11 = Button(top,text = "Godowns",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.430,relwidth=.148)
+b11 = Button(top,text = "Godowns",command=listofgodowns,activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.430,relwidth=.148)
 b12 = Button(top,text = "Stock Group Summary",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.470,relwidth=.148)
 b13 = Button(top,text = "Stock Catagory Summary",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.510,relwidth=.148)
 b14 = Button(top,text = "Stock Transfer Journal Register",activeforeground = "black", activebackground = "#ffbe23",bg='#a9ceeb',borderwidth=0,font=('Arial 10')).place(relx=0.562, rely=0.600,relwidth=.148)
