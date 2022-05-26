@@ -105,6 +105,33 @@ def stockitemmonthlysummary():
     l1f1=Label(f11,text="    P e r t i c u l a r s",font=("Arial",11),fg="black",bg="white",anchor="w", borderwidth=0,relief=GROOVE,width=5,height=4)
     l1f1.pack(fill=X,pady=12,padx=0)
 
+    name = Label(top, text = "Inwards",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 700,y = 128,width=60,height=30)
+    alias = Label(top, text = "Quantity",fg='black',bg='white').place(x = 620, y =140,width=60,height=30)
+    alias = Label(top, text = "Value",fg='black',bg='white').place(x = 790, y =140,width=60,height=30)
+
+    name = Label(top, text = "Outwards",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 930,y = 128,width=60,height=30)
+    alias = Label(top, text = "Quantity",fg='black',bg='white').place(x = 850, y =140,width=60,height=30)
+    alias = Label(top, text = "Value",fg='black',bg='white').place(x = 1005, y =140,width=60,height=30) 
+
+    name = Label(top, text = "Closing Balance",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 1128,y = 128,width=115,height=30)
+    alias = Label(top, text = "Quantity",fg='black',bg='white').place(x = 1075, y =140,width=60,height=30)
+    alias = Label(top, text = "Value",fg='black',bg='white').place(x = 1235, y =140,width=60,height=30) 
+  
+    alias = Label(top, text = "Opening Balance",fg='black',bg='white').place(x = 0, y =200,width=120)
+
+    alias = Label(top, text = "April",fg='black',bg='white').place(x = 0, y =220,width=50)
+    alias = Label(top, text = "May",fg='black',bg='white').place(x = 0, y =240,width=50)
+    alias = Label(top, text = "June",fg='black',bg='white').place(x = 0, y =260,width=50)
+    alias = Label(top, text = "July",fg='black',bg='white').place(x = 0, y =280,width=50)
+    alias = Label(top, text = "Augest",fg='black',bg='white').place(x = 0, y =300,width=63)
+    alias = Label(top, text = "September",fg='black',bg='white').place(x = 0, y =320,width=80)
+    alias = Label(top, text = "October",fg='black',bg='white').place(x = 0, y =340,width=63)
+    alias = Label(top, text = "November",fg='black',bg='white').place(x = 0, y =360,width=80)
+    alias = Label(top, text = "December",fg='black',bg='white').place(x = 0, y =380,width=80)
+    alias = Label(top, text = "January",fg='black',bg='white').place(x = 0, y =400,width=65)
+    alias = Label(top, text = "Feburary",fg='black',bg='white').place(x = 0, y =420,width=75)
+    alias = Label(top, text = "March",fg='black',bg='white').place(x = 0, y =440,width=60)
+
     frame=Frame(top,width=1210,)
     frame.place(x=0,y=375,width=1300)
 
