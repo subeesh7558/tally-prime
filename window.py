@@ -119,18 +119,18 @@ def stockitemmonthlysummary():
   
     alias = Label(top, text = "Opening Balance",fg='black',bg='white').place(x = 0, y =200,width=120)
 
-    alias = Label(top, text = "April",fg='black',bg='white').place(x = 0, y =220,width=50)
-    alias = Label(top, text = "May",fg='black',bg='white').place(x = 0, y =240,width=50)
-    alias = Label(top, text = "June",fg='black',bg='white').place(x = 0, y =260,width=50)
-    alias = Label(top, text = "July",fg='black',bg='white').place(x = 0, y =280,width=50)
-    alias = Label(top, text = "Augest",fg='black',bg='white').place(x = 0, y =300,width=63)
-    alias = Label(top, text = "September",fg='black',bg='white').place(x = 0, y =320,width=80)
-    alias = Label(top, text = "October",fg='black',bg='white').place(x = 0, y =340,width=63)
-    alias = Label(top, text = "November",fg='black',bg='white').place(x = 0, y =360,width=80)
-    alias = Label(top, text = "December",fg='black',bg='white').place(x = 0, y =380,width=80)
-    alias = Label(top, text = "January",fg='black',bg='white').place(x = 0, y =400,width=65)
-    alias = Label(top, text = "Feburary",fg='black',bg='white').place(x = 0, y =420,width=75)
-    alias = Label(top, text = "March",fg='black',bg='white').place(x = 0, y =440,width=60)
+    alias = Button(top, text = "April",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =220,width=50)
+    alias = Button(top, text = "May",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =240,width=50)
+    alias = Button(top, text = "June",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =260,width=50)
+    alias = Button(top, text = "July",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =280,width=50)
+    alias = Button(top, text = "Augest",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =300,width=63)
+    alias = Button(top, text = "September",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =320,width=80)
+    alias = Button(top, text = "October",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =340,width=63)
+    alias = Button(top, text = "November",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =360,width=80)
+    alias = Button(top, text = "December",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =380,width=80)
+    alias = Button(top, text = "January",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =400,width=65)
+    alias = Button(top, text = "Feburary",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =420,width=75)
+    alias = Button(top, text = "March",command=stockitemvouchers,activeforeground = "black", activebackground = "#ffeb7d",bg='white',borderwidth=0,font=('Arial 10')).place(x = 0, y =440,width=60)
 
     frame=Frame(top,width=1210,)
     frame.place(x=0,y=375,width=1300)
@@ -153,6 +153,75 @@ def stockitemmonthlysummary():
 
     separator = ttk.Separator(top, orient='horizontal')
     separator.place(relx=0, rely=0.73, relheight=0, relwidth=0.845)
+   
+
+
+
+def stockitemvouchers():
+    trialbalanc = Label(top, text="Stock Item Vouchers", fg='black', bg='#00c8ff', font=(
+    'Arial 7 bold'), anchor='w').place(x=1, y=60, width=1219, height=13)
+    trialbalanceform = Label(top, text="", fg='#00c8ff', bg='white', font=(
+    'Arial 9 underline'), anchor='w').place(x=1, y=73, width=1298, height=804)
+    b4 = Button(top, text="x", command=stockitemmonthlysummary, activeforeground="black", activebackground="#00c8ff",
+            fg='black', bg='#00c8ff', borderwidth=0, font=('Arial 10 bold'),).place(x=1280, y=60,height=12)
+
+    f11=Frame(top,bg="white",relief=RAISED,bd=0.5)
+    f11.place(x=0,y=73,width=1298,height=100)
+
+    l1f1=Label(f11,text="Stock Item:",font=("Arial",11),fg="black",bg="white",anchor="w", borderwidth=0,relief=GROOVE,width=5,height=4)
+    l1f1.pack(fill=X,pady=12,padx=0)
+
+    alias = Label(top, text = "1-Apr-22 to 30-Apr-23",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 1140, y =90,width=150,height=30) 
+
+    alias = Label(top, text = "Date:",fg='black',bg='white').place(x = 4, y =140,width=60,height=30)
+    alias = Label(top, text = "Perticulars:",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 120, y =140,width=100,height=30)
+    alias = Label(top, text = "Vch Type:",fg='black',bg='white').place(x = 400, y =140,width=60,height=30)
+    alias = Label(top, text = "Vch No:",fg='black',bg='white').place(x =550, y =140,width=60,height=30)
+
+
+    alias = Label(top, text = "Total as per Default Valuation :",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 4, y =760,width=300,height=30)
+
+
+
+
+    name = Label(top, text = "Inwards",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 700,y = 128,width=60,height=30)
+    alias = Label(top, text = "Quantity",fg='black',bg='white').place(x = 620, y =140,width=60,height=30)
+    alias = Label(top, text = "Value",fg='black',bg='white').place(x = 790, y =140,width=60,height=30)
+
+    name = Label(top, text = "Outwards",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 930,y = 128,width=60,height=30)
+    alias = Label(top, text = "Quantity",fg='black',bg='white').place(x = 850, y =140,width=60,height=30)
+    alias = Label(top, text = "Value",fg='black',bg='white').place(x = 1005, y =140,width=60,height=30) 
+
+    name = Label(top, text = "Closing",fg='black',bg='white',font="-family {Segoe Arial} -size 10 -weight bold ").place(x = 1128,y = 128,width=115,height=30)
+    alias = Label(top, text = "Quantity",fg='black',bg='white').place(x = 1075, y =140,width=60,height=30)
+    alias = Label(top, text = "Value",fg='black',bg='white').place(x = 1235, y =140,width=60,height=30) 
+  
+   
+
+
+
+
+    frame=Frame(top,width=1210,)
+    frame.place(x=0,y=375,width=1300)
+
+    tabletrialbalance = ttk.Treeview(frame)
+    separator = ttk.Separator(top, orient='horizontal')
+    separator.place(relx=0, rely=0.16, relheight=0, relwidth=0.845)
+
+    separator = ttk.Separator(top, orient='vertical')
+    separator.place(relx=0.40, rely=0.09, relheight=0.805, relwidth=0)
+
+    separator = ttk.Separator(top, orient='vertical')
+    separator.place(relx=0.55, rely=0.16, relheight=0.737, relwidth=0)
+
+    separator = ttk.Separator(top, orient='vertical')
+    separator.place(relx=0.70, rely=0.16, relheight=0.737, relwidth=0)
+
+    separator = ttk.Separator(top, orient='horizontal')
+    separator.place(relx=0, rely=0.90, relheight=0, relwidth=0.845)
+
+    separator = ttk.Separator(top, orient='horizontal')
+    separator.place(relx=0, rely=0.93, relheight=0, relwidth=0.845)
 
 
 
